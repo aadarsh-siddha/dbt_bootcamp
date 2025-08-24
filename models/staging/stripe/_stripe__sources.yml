@@ -1,0 +1,15 @@
+version: 2
+sources:
+  - name: stripe
+    database: raw
+    schema: stripe
+    tables:
+      - name: payment
+        freshness: 
+          error_after:
+            count: 8
+            period: day
+          warn_after:
+            count: 4
+            period: day
+        loaded_at_field: _batched_at
