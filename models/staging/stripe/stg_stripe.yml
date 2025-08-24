@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: stg_stripe__payments
+    description: payment made by customer
+    columns:
+      - name: payment_method
+        description: payment method used by customer
