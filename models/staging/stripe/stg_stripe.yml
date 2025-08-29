@@ -6,3 +6,6 @@ models:
     columns:
       - name: payment_method
         description: payment method used by customer
+        tests:
+          - dbt_utils.not_empty_string:
+              trim_whitespace: false
