@@ -2,10 +2,29 @@ version: 2
 
 models:
   - name: stg_stripe__payments
-    description: payment made by customer
+    description: "payment made by customer"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "amount >= 0"
     columns:
+      - name: payment_id
+        description: "Primary Key"
+        tests:
+          - unique
+          - not_null
       - name: payment_method
-        description: payment method used by customer
+        description: "payment method used by customer"
         tests:
           - dbt_utils.not_empty_string:
               trim_whitespace: false
+      - name: amount
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              row_condition: "order_id is not null"
+              strictly: false
+          - dbt_expectations.expect_column_mean_to_be_between:
+              min_value: 1
+              group_by: [customer_id]
+              row_condition: "order_id is not null"
+              strictly: false

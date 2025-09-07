@@ -13,3 +13,17 @@ sources:
             count: 4
             period: day
         loaded_at_field: _batched_at
+        columns:
+          - name: id
+            tests:
+              - unique:
+                  severity: error
+                  error_if: ">=100"
+                  warn_if: ">=10"
+          - name: paymentmethod
+          - name: status
+            tests:
+              - accepted_values:
+                  values:
+                    - success
+                    - fail
