@@ -8,5 +8,4 @@
     group by 1
     having average_amount < 1
 
-
 {% endtest %}
