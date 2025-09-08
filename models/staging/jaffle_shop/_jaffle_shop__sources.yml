@@ -29,3 +29,10 @@ sources:
             count: 4
             period: day
         loaded_at_field: _etl_loaded_at
+      - name: items
+        description: Items included in an order
+      - name: stores
+      - name: products
+        description: One record per SKU for items sold in stores
+      - name: supplies
+        description: One record per supply per SKU of items sold in stores

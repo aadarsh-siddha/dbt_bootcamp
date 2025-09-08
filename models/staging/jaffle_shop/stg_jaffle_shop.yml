@@ -31,3 +31,27 @@ models:
           - relationships:
               field: customer_id
               to: ref('stg_jaffle_shop__customers')
+  - name: stg_jaffle_shop__order_items
+    columns:
+      - name: order_item_id
+        tests:
+          - not_null
+          - unique
+  - name: stg_jaffle_shop__products
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+  - name: stg_jaffle_shop__supplies
+    columns:
+      - name: supply_uuid
+        tests:
+          - not_null
+          - unique
+  - name: stg_jaffle_shop__locations
+    columns:
+      - name: location_id
+        tests:
+          - not_null
+          - unique

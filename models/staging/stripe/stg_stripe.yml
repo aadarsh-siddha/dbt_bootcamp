@@ -25,6 +25,6 @@ models:
               strictly: false
           - dbt_expectations.expect_column_mean_to_be_between:
               min_value: 1
-              group_by: [customer_id]
+              group_by: [order_id]
               row_condition: "order_id is not null"
               strictly: false
