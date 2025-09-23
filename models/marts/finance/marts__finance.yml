@@ -1,12 +1,4 @@
 models:
-  - name: fct_orders
-    description: "Fact Orders"
-    columns:
-      - name: customer_id
-        tests:
-          - relationships:
-              field: customer_id
-              to: ref('dim_customers')
   - name: refactor_customer_orders
     description: "refactor task"
     columns:

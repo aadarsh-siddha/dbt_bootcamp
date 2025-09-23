@@ -20,7 +20,7 @@ final AS
     SELECT 
         p.order_id,
         o.customer_id,
-        p.amount,
+        p.amount as order_amount,
         o.order_date
     FROM payments p
     JOIN orders o

@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "Fact table of orders joined with Stripe payments."
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: order_id
+        description: "Unique order identifier."
+        data_type: number
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "Customer foreign key."
+        data_type: varchar
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
+
+      - name: amount
+        description: "Payment amount."
+        data_type: number(12,2)
+        tests:
+          - not_null
+
+      - name: order_date
+        description: "Order creation timestamp."
+        data_type: timestamp_ntz
+        tests:
+          - not_null
