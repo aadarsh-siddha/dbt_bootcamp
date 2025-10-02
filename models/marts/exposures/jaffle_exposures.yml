@@ -1,0 +1,8 @@
+exposures:
+  - name: orders_data
+    label:  orders_data
+    type: notebook
+    depends_on: 
+      - ref('fct_orders')
+    owner:
+      name: Aadarsh

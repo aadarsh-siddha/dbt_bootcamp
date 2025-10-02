@@ -10,7 +10,7 @@ renamed as (
     select
 
         ----------  ids
-        id as location_id,
+        CAST(id AS VARCHAR) as location_id,
 
         ---------- text
         name as location_name,

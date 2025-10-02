@@ -1,5 +1,5 @@
 select
-    id as customer_id,
+    CAST(id AS VARCHAR) as customer_id,
     name,
     first_name,
     last_name
