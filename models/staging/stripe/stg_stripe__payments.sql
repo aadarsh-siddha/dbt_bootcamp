@@ -1,6 +1,6 @@
 SELECT
-    id AS payment_id,
-    orderid AS order_id,
+    CAST(id AS VARCHAR) AS payment_id,
+    CAST(orderid AS VARCHAR) AS order_id,
     paymentmethod AS payment_method,
     status,
     {{ cents_to_dollars("amount", 2) }} AS amount,

@@ -9,11 +9,9 @@ source as (
 renamed as (
 
     select
-
-        ----------  ids
-        id as order_item_id,
-        order_id,
-        sku as product_id
+        CAST(id AS VARCHAR)        as order_item_id,
+        CAST(order_id AS VARCHAR)  as order_id,
+        CAST(sku AS VARCHAR)       as product_id
 
     from source
 

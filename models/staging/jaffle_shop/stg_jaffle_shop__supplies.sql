@@ -12,8 +12,8 @@ renamed as (
 
         ----------  ids
         {{ dbt_utils.generate_surrogate_key(['id', 'sku']) }} as supply_uuid,
-        id as supply_id,
-        sku as product_id,
+        CAST(id AS VARCHAR) as supply_id,
+        CAST(sku AS VARCHAR) as product_id,
 
         ---------- text
         name as supply_name,
