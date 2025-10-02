@@ -4,7 +4,7 @@ snapshots:
     config:
       schema: snapshots
       database: analytics
-      unique_key: order_id
+      unique_key: id
       strategy: check
       check_cols: ['id','ordered_at']
       hard_deletes: ignore

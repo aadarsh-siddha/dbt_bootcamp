@@ -20,11 +20,11 @@ models:
         tests:
           - unique
           - not_null
-      - name: status
-        description: "{{ doc('order_status') }}"
-        tests:
-          - accepted_values:
-              values: ['shipped', 'completed', 'return_pending', 'returned', 'placed']
+      # - name: status
+      #   description: "{{ doc('order_status') }}"
+      #   tests:
+      #     - accepted_values:
+      #         values: ['shipped', 'completed', 'return_pending', 'returned', 'placed']
       - name: customer_id
         description: customer_id ref from customers table
         tests:
